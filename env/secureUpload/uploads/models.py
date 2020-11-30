@@ -1,3 +1,11 @@
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 # Create your models here.
+
+class File(models.Model):
+    name = models.CharField(max_length=25)
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)

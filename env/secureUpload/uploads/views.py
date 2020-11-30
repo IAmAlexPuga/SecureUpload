@@ -6,12 +6,14 @@ from django.http import HttpResponse
 posts = [
 
     {
+        'id': 2,
         'name': 'fileName',
         'extension' : '.txt',
         'date_posted': 'August 21, 2020',
         'content': 'My stuff',
     },
     {
+        'id': 4,
         'name': 'file2',
         'extension' : '.doc',
         'date_posted': 'November 21, 2020',
