@@ -138,7 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = 'uploads-home'
-LOGOUT_REDIRECT_URL = 'uploads-home'
+LOGOUT_REDIRECT_URL = 'accounts/login/'
 
  # Attempt to grab more info from google
 GOOGLE_OAUTH2_EXTRA_DATA = [('id', 'id')]
