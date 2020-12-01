@@ -23,7 +23,7 @@ class FileDetailView(DetailView):
 # shows new item for a post
 class FileCreateView(CreateView):
     model = File
-    fields = ['name', 'content', 'extension']
+    fields = ['name','content', 'extension']
 
     # validates the form with the current user
     def form_valid(self, form):
