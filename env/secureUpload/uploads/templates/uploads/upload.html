@@ -1,0 +1,16 @@
+{% extends "uploads/base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Upload File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <!-- Cross site request forgery token -->
+        {% csrf_token %}
+        <input type="file" name="document"><br>
+        <label for="name">File Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="content">Content:</label><br>
+        <input type="textfield" id="content" name="content"><br>
+        <button type="submit">Upload</button>
+      </form>
+    
+{% endblock content %}
