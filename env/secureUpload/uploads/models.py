@@ -14,9 +14,10 @@ class File(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    link = models.CharField(blank=True, max_length=70)
 
     def __str__(self):
         return self.name
-
+        
     def get_absolute_url(self):
         return reverse('uploads-detail', kwargs={'pk': self.pk})
