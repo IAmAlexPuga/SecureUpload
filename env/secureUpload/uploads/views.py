@@ -6,10 +6,8 @@ from botocore.exceptions import ClientError
 from typing import Optional
 from .models import File
 
-
-
-    #Must update the .aws/credentials with aws student session token every time!
-    #Remeber for demo
+#Must update the .aws/credentials with aws student session token every time!
+#Remeber for demo
 def create_presigned_url(bucket_name: str, object_name: str, expiration=300) -> Optional[str]:
     #Grab current session
     s3_client = boto3.session.Session().client('s3')
