@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.decorators import login_required
 #from django.http import HttpResponse
 from .models import File
 
+@login_required
 def home(request):
     context = {
         'posts': File.objects.all()

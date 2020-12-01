@@ -2,7 +2,13 @@
 {% load socialaccount %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
 <h1>Secure Upload Home</h1>
+{% else %}
+<h1>Please sign in to begin uploading</h1>
+{% endif %}
+
 {% for post in posts %}
 {% if post.user.id == user.id %}
 <article class="media content-section">
@@ -11,11 +17,11 @@
             <a class="mr-2" href="{% url 'uploads-detail' post.id %}">{{ post.name }}</a>
             <small class="text-muted">{{ post.date_posted }}</small>
         </div>
-        <h2><a class="article-title" href="{% url 'uploads-detail' post.id %}">{{ post.name }}{{ post.extension }}</a></h2>
+        <h2><a class="article-title" href="{% url 'uploads-detail' post.id %}">{{ post.name }}{{ post.extension }}</a>
+        </h2>
         <p class="article-content">{{ post.content }}</p>
     </div>
 </article>
 {% endif %}
 {% endfor %}
-{% endblock %}
-
+{% endblock content %}
